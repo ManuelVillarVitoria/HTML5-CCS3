@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.div1 {
+    float: left;
+    width: 100px;
+    height: 20px;
+    margin: 2px;
+    border: 3px solid #73AD21;
+    //z-index:-1;
+    //position:absolute;
+    /* si posem el z-index y position el div 1 queda enrere */
+}
+
+.div2 {
+    border: 1px solid red;
+    background: red;
+}
+
+
+.div3 {
+    float: left;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    border: 3px solid #73AD21;
+}
+
+
+
+.div4 {
+	background: red;
+    border: 1px solid red;
+    clear: both;
+    /* Si posem un clear left montarà el div3c sobre el div4*/
+    
+    /* posant el clear left no puja i no té en compte el float. Si treiem el clear left, veient que es posiciona i superposa  respecte el float anterior, el .div3. però no toca el .div3b*/
+}
+
+	.div3b {
+	background: green;
+}
+
+/* Ara veiem que si toca.. Això es interesant per fer un footer.*/
+	.div3c {
+    float:right;
+	background: yellow;
+    width:50px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Without clear</h2>
+<div class="div1">div1</div>
+<div class="div2">div2 - Notice that the div2 element is after div1, in the HTML code. However, since div1 is floated to the left, this happens: the text in div2 is floated around div1, and div2 surrounds the whole thing.</div>
+
+<h2>Using clear</h2>
+<div class="div3">div3</div>
+<div class="div3b">div3b</div>
+<div class="div3c">div3c _ Hola Mundo como estás?</div>
+<div class="div4">div4 - Using clear moves div4 down below the floated div3. The value "left" clears elements floated to the left. You can also clear "right" and "both".</div>
+
+</body>
+</html>
